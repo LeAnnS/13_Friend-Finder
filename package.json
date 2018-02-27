@@ -1,0 +1,25 @@
+{
+  "name": "13_Friend-Finder",
+  "version": "1.0.0",
+  "description": "Friend Finder is a compatibility-based application using Node and Express servers.  The site will take in results from the users' surveys and compare the answers to those from other users.  The app will then display the name and the picture of the user with the best overall match.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeAnnS/13_Friend-Finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeAnnS/13_Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/LeAnnS/13_Friend-Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
