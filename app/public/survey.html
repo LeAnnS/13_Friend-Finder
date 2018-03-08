@@ -45,6 +45,106 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
+
+    <h3><strong>Question 2</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q2">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 3</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q3">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 4</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q4">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 5</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q5">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 6</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q6">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 7</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q7">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 8</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q8">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h3><strong>Question 9</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q9">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+
+    <h3><strong>Question 10</strong></h3>
+    <h4>I like the color blue.</h4>
+    <select class="chosen-select" id="q10">
+      <option value=""></option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
     
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
@@ -67,27 +167,7 @@
 
 
   <script type="text/javascript">
-      // Chosen CSS
-      // var config = {
-      //   ".chosen-select": {},
-      //   ".chosen-select-deselect": {
-      //     allow_single_deselect: true
-      //   },
-      //   ".chosen-select-no-single": {
-      //     disable_search_threshold: 10
-      //   },
-      //   ".chosen-select-no-results": {
-      //     no_results_text: "Oops, nothing found!"
-      //   },
-      //   ".chosen-select-width": {
-      //     width: "95%"
-      //   }
-      // };
-
-      // for (var selector in config) {
-      //   $(selector).chosen(config[selector]);
-      // }
-
+      
       // Capture the form inputs
       $("#submit").on("click", function(event) {
         event.preventDefault();
@@ -115,19 +195,19 @@
           // Create an object for the user"s data
           var userData = {
             friendName: $("#name").val().trim(),
-            frinedPhoto: $("#photo").val().trim(),
-            // scores: [
-            //   $("#q1").val(),
-            //   $("#q2").val(),
-            //   $("#q3").val(),
-            //   $("#q4").val(),
-            //   $("#q5").val(),
-            //   $("#q6").val(),
-            //   $("#q7").val(),
-            //   $("#q8").val(),
-            //   $("#q9").val(),
-            //   $("#q10").val()
-            // ]
+            friendPhoto: $("#photo").val().trim(),
+            friendScores: [
+              $("#q1").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q4").val(),
+              $("#q5").val(),
+              $("#q6").val(),
+              $("#q7").val(),
+              $("#q8").val(),
+              $("#q9").val(),
+              $("#q10").val()
+            ]
           };
 
           console.log(userData);
@@ -137,17 +217,27 @@
 
           $.post(currentURL + "/api/friends", userData, function(data) {
               // If successful
-              if (data) {
-                alert("You are a new friend!");
-              }
+              // if (data) {
+              //   alert("You are a new friend!");
+              // }
               // if not posted
-              else {
-                alert("dang!");
-              }
+              // else {
+              //   alert("dang!");
+              // }
 
               // clear form when submitted
               $("#name").val("");
               $("photo").val("");
+              $("#q1").val(""),
+              $("#q2").val(""),
+              $("#q3").val(""),
+              $("#q4").val(""),
+              $("#q5").val(""),
+              $("#q6").val(""),
+              $("#q7").val(""),
+              $("#q8").val(""),
+              $("#q9").val(""),
+              $("#q10").val("")
 
           });
           
